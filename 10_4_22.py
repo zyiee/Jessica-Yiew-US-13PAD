@@ -194,7 +194,7 @@ def info_change():  # student info change
             pass
         else:
             student_info[d_index] = str(change_mark)
-            print(str(option + ' for' + name + ' has been changed to ' + str(change_mark)))
+            print(str(option + ' for ' + name + ' has been changed to ' + str(change_mark)))
             break
 
 
@@ -252,9 +252,10 @@ def test_statistics():  # test statistics display
     m_scores = []  # male collective scores
     for students in student_data:
         value = student_data[students]
-        if 'f' in value:
+        gender = value[1].lower()
+        if gender == 'f':
             f_scores.append(value[f_index])
-        elif 'm' in value:
+        elif gender == 'm':
             m_scores.append(value[f_index])
 
     # female average
